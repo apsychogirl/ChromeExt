@@ -1,0 +1,31 @@
+{
+    "name": "first extension",
+    "version": "1.0.0",
+    "description": "This is my first extension",
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "background.js",
+            "backgroundMessaging.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["https://*.youtube.com/*"],
+        "js": [
+            "content.js",
+            "contentMessaging.js"
+        ]
+    }],
+    "permissions": ["bookmarks", "storage", "tabs"],
+    "icons": {
+        "16": "darkIcon.png",
+        "48": "darkIcon.png",
+        "128": "darkIcon.png"
+    },
+    "browser_action": {
+        "default_title": "Created by apsychogirl :)",
+        "default_popup": "popup.html"
+    }
+
+}
